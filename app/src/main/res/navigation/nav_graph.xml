@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ventanaPrincipal">
+
+    <fragment
+        android:id="@+id/ventanaPrincipal"
+        android:name="com.example.cascaron.VentanaPrincipalFragment"
+        android:label="fragment_ventana_principal"
+        tools:layout="@layout/fragment_ventana_principal" >
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_busquedaAgrupacion"
+            app:destination="@id/busquedaAgrupacion" />
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_informacionEventoFragment"
+            app:destination="@id/informacionEventoFragment" />
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_calendarioFragment"
+            app:destination="@id/calendarioFragment" />
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_subidaEventoFragment"
+            app:destination="@id/subidaEventoFragment" />
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_perfilUsuarioFragment"
+            app:destination="@id/perfilUsuarioFragment" />
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_agrupacionListFragment"
+            app:destination="@id/agrupacionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/busquedaAgrupacion"
+        android:name="com.example.cascaron.ui.busqueda.BusquedaAgrupacion"
+        android:label="fragment_busqueda_agrupacion"
+        tools:layout="@layout/fragment_busqueda_agrupacion" >
+        <action
+            android:id="@+id/action_busquedaAgrupacion_to_perfilAgrupacionFragment"
+            app:destination="@id/perfilAgrupacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/informacionEventoFragment"
+        android:name="com.example.cascaron.ui.evento.InformacionEventoFragment"
+        android:label="fragment_informacion_evento"
+        tools:layout="@layout/fragment_informacion_evento" />
+    <fragment
+        android:id="@+id/calendarioFragment"
+        android:name="com.example.cascaron.ui.calendario.CalendarioFragment"
+        android:label="fragment_calendario"
+        tools:layout="@layout/fragment_calendario" />
+    <fragment
+        android:id="@+id/perfilAgrupacionFragment"
+        android:name="com.example.cascaron.ui.perfilAgrupacion.PerfilAgrupacionFragment"
+        android:label="fragment_perfil_agrupacion"
+        tools:layout="@layout/fragment_perfil_agrupacion" />
+    <fragment
+        android:id="@+id/subidaEventoFragment"
+        android:name="com.example.cascaron.ui.evento.SubidaEventoFragment"
+        android:label="SubidaEventoFragment" />
+    <fragment
+        android:id="@+id/perfilUsuarioFragment"
+        android:name="com.example.cascaron.ui.perfilUsuario.PerfilUsuarioFragment"
+        android:label="fragment_perfil_usuario"
+        tools:layout="@layout/fragment_perfil_usuario" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.cascaron.ui.aboutus.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/agrupacionListFragment"
+        android:name="com.example.cascaron.ui.listaAgrupacion.AgrupacionListFragment"
+        android:label="fragment_agrupacion_list"
+        tools:layout="@layout/fragment_agrupacion_list" />
+</navigation>

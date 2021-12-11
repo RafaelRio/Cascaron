@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name" translatable="false">Gestor Eventos</string>
+    <string name="title_activity_login_user">LoginUserActivity</string>
+
+    <string name="loginTitle">Inicio de Sesión</string>
+    <string name="ckRemember">Recordarme</string>
+    <string name="tieUser">Usuario o correo</string>
+    <string name="tiePassword">Contraseña</string>
+    <string name="btnRegistro">Registrarse</string>
+    <string name="btnLogin">Iniciar Sesion</string>
+    <string name="tvRegistro">Registro</string>
+    <string name="IntroduceUsuario">Usuario</string>
+    <string name="tieEmail">Correo</string>
+    <string name="tieIntroduceContraseña">Contraseña</string>
+    <string name="tieConfirmeContraseña">Confirme contraseña</string>
+    <string name="btnRegistrarse">Registrarse</string>
+    <string name="title_activity_main" translatable="false">MainActivity</string>
+    <string name="btnLoginGoogle">Iniciar sesion con Google</string>
+    <string name="btnLoginFacebook">Iniciar sesion con Facebook</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="aboutus_fragment_label" translatable="false">fragment_about_us</string>
+    <string name="action_aboutUs">Sobre nosotros</string>
+    <string name="action_settings">Preferencias</string>
+    <string name="action_search">Buscar</string>
+    <string name="title_activity_login" translatable="false">LoginActivity</string>
+    <string name="prompt_email">"Correo "</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Registrase o inciar sesion</string>
+    <string name="action_sign_in_short">Registro</string>
+
+    <string name="LoginActivity">Inicio de Sesion</string>
+    <string name="registro">Registro</string>
+    <string name="tvTieneCuenta">¿Ya tiene cuenta?</string>
+    <string name="creeUna">Inicie sesion</string>
+    <string name="tvSinEventos">Aquí irán apareciendo los eventos que se vayan creando. Pulse sobre la lupa para buscar una agrupacion</string>
+    <string name="btnEventoPrueba">Esto es una prueba de lo que pasaria si hay un evento y clicas sobre el. Te llevará a un nuevo fragment con informacion sobre el</string>
+    <string name="tvBusquedaAgrupaciones">Busqueda de agrupaciones</string>
+    <string name="tieNombreAgrupacion">Nombre agrupacion</string>
+    <string name="tieTipoAgrupacion">Tipo de agrupacion</string>
+    <string name="btnBorrar">Borrar</string>
+    <string name="btnBuscar">Buscar</string>
+    <string name="tvAgrupacionesEncontradas">Aqui aparecera una lista de las agrupaciones que se han encontrado con los datos introducidos</string>
+    <string name="tvInfoEvento">Informacion del evento</string>
+    <string name="tvNombreEvento">Nombre del evento</string>
+    <string name="tieNombreEvento">Concierto de marchas procesionales</string>
+    <string name="tvFechaInicio">Fecha Inicio</string>
+    <string name="tieFechaInicio" translatable="false">25/11/2021 20:00</string>
+    <string name="tvFechaFin">Fecha Fin</string>
+    <string name="tieFechaFin" translatable="false">25/11/2021 21:00</string>
+    <string name="tvUbicacion">Ubicacion</string>
+    <string name="tieUbicacion" translatable="false">Calle Alcazabilla, Málaga</string>
+    <string name="tvComentarios">Comentarios</string>
+    <string name="toastUbicacion">"Esto abrira google maps con la ubicacion introducida"</string>
+    <string name="toastCalendario">"Esto mostrará el calendario para añadir el evento"</string>
+    <string name="tieComentarios">Aqui apareceran los comentarios que se hagan sobre el evento. Pulsa en + para añadir comentarios</string>
+    <string name="btnAgrupacionEncontrada" translatable="false">Agrupacion1</string>
+    <string name="tvNombreAgrupacion" translatable="false">Banda de Musica Cruz del Humilladero</string>
+    <string name="tvMiembris">Miembros</string>
+    <string name="tvnMiembris" translatable="false">100</string>
+    <string name="tvFundacion">Fundacion</string>
+    <string name="tvanioFundacion" translatable="false">2000</string>
+    <string name="fabSeguir">Con este boton tienes la opcion de seguir a la agrupacion</string>
+    <string name="tvDireccion">Director:</string>
+    <string name="tvDirector" translatable="false">Jesus Puyana</string>
+    <string name="tvDescripcion">Descripcion:</string>
+    <string name="edDescripcion">Aqui iria una pequeña descripcion sobre la agrupacion</string>
+    <string name="anadirComentario">Este boton te permitira añadir comentarios</string>
+    <string name="tvPublicarEvento">Publicacion de eventos</string>
+    <string name="tvTipoEvento">Tipo de evento</string>
+    <string name="btnPublicar">Publicar</string>
+    <string name="publicacionEvento">Con este boton se puede publicar un evento con los datos rellenados</string>
+    <string name="tvNombreUsuario" translatable="false">Rafael Rio</string>
+    <string name="tvEmailUsuario" translatable="false">rafa2000inator@gmail.com</string>
+    <string name="btnAboutUs">Acerca de</string>
+    <string name="action_orderAgrupacion" translatable="true">Ordenar agrupaciones</string>
+    <string name="action_orderByDescription">Ordenar por descripcion</string>
+    <string name="undo" translatable="false">UNDO</string>
+    <string name="recycler" translatable="false">Recycler</string>
+
+</resources>
