@@ -22,7 +22,7 @@ public class AgrupacionListPresenter implements AgrupacionListContract.Presenter
     }
 
     /**
-     * Este metodo elimina una dependencia de toda la aplicacion (BD, repositorio...)
+     * Este metodo elimina una agrupacion de toda la aplicacion (BD, repositorio...)
      *
      * @param agrupacion
      */

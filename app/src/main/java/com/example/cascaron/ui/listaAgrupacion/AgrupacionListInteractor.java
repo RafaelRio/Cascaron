@@ -44,7 +44,7 @@ public class AgrupacionListInteractor implements OnRepositoryListCallback {
     }
 
     /**
-     * Elimina la dependencia del repositorio
+     * Elimina la agrupacion del repositorio
      *
      * @param dependency
      */
