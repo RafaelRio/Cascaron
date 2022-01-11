@@ -58,4 +58,8 @@
     <string name="btnAboutUs">About Us</string>
     <string name="action_orderAgrupacion">Order Agrupation</string>
     <string name="action_orderByDescription">Order Agrupation by description</string>
+    <string name="calendario">Calendar</string>
+    <string name="subida_evento">Event upload</string>
+    <string name="perfil_agrupacion">Group profile</string>
+    <string name="perfil_usuario">User profile</string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.cascaron.ui.aboutus;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,6 +15,12 @@ import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.views.AboutView;
 
 public class AboutUsFragment extends Fragment {
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getActivity().setTitle(R.string.action_aboutUs);
+    }
 
     FragmentAboutUsBinding binding;
     @Override

@@ -79,5 +79,9 @@
     <string name="action_orderByDescription">Ordenar por descripcion</string>
     <string name="undo" translatable="false">UNDO</string>
     <string name="recycler" translatable="false">Recycler</string>
+    <string name="calendario">Calendario</string>
+    <string name="subida_evento">Subida evento</string>
+    <string name="perfil_agrupacion">Perfil de agrupacion</string>
+    <string name="perfil_usuario">Perfil de usuario</string>
 
 </resources>

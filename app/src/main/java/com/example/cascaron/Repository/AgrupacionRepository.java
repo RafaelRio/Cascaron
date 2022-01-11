@@ -27,14 +27,16 @@ public class AgrupacionRepository implements AgrupacionListContract.Repository{
     }
 
     private void initialice() {
-        list.add(new Agrupacion(null, null, "BM Cruz Humilladero", 100, "2000", "Jesus Puyana", "a"));
+        list.add(new Agrupacion(null, null, "BM Cruz Humilladero", 100, "2000", "Jesus Puyana Gomez", "a"));
         list.add(new Agrupacion(null, null, "BM La Paz", 100, "1995", "2001", "d"));
         list.add(new Agrupacion(null, null, "BM Miraflores", 100, "1975", "Jose Maria Puyana", "l"));
         list.add(new Agrupacion(null, null, "BM Zamarrilla", 100, "1997", "NPI", "s"));
         list.add(new Agrupacion(null, null, "CCTT Cautivo", 100, "1997", "NPI", "r"));
         list.add(new Agrupacion(null, null, "AM San Lorenzo Martir", 100, "1997", "NPI", "y"));
         list.add(new Agrupacion(null, null, "BM (m)Pena", 100, "2005", "NPI", "f"));
-        list.add(new Agrupacion(null, null, "BM Las Flores", 100, "1960", "NPI", "b"));
+        list.add(new Agrupacion(null, null, "BM Esperanza", 100, "1960", "Juan Jesus Lopez Sandoval", "h"));
+        list.add(new Agrupacion(null, null, "CCTT Gitanos", 100, "1960", "NPI", "e"));
+        list.add(new Agrupacion(null, null, "AM Cautivo Estepona", 100, "1960", "NPI", "g"));
 
     }
 

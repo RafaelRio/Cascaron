@@ -40,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_search:
-
-                return true;
 
             default:
                 //Si lsos fragments modifican el menu de la Activity se devuelve false

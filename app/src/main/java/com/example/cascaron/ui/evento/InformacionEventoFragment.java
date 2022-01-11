@@ -2,6 +2,7 @@ package com.example.cascaron.ui.evento;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -17,6 +18,13 @@ import com.example.cascaron.databinding.FragmentVentanaPrincipalBinding;
 public class InformacionEventoFragment extends Fragment implements View.OnClickListener{
 
     private FragmentInformacionEventoBinding binding;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getActivity().setTitle(R.string.tvInfoEvento);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
