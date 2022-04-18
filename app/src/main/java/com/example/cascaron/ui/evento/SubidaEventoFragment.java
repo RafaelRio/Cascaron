@@ -2,10 +2,15 @@ package com.example.cascaron.ui.evento;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -21,6 +26,8 @@ public class SubidaEventoFragment extends Fragment implements View.OnClickListen
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.subida_evento);
+        setHasOptionsMenu(true);
+
     }
 
     @Override
@@ -28,25 +35,36 @@ public class SubidaEventoFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSubidaEventoBinding.inflate(inflater, container, false);
-        binding.btnBorrarCampos.setOnClickListener(this);
-        binding.btnPublicarEvento.setOnClickListener(this);
         return binding.getRoot();
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.btnBorrarCampos:
-                borrarCampos();
-                break;
-            case R.id.btnPublicarEvento:
-                publicarEvento();
-                break;
-        }
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding.fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), R.string.addEvent, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    private void publicarEvento() {
-        Toast.makeText(getActivity(), R.string.publicacionEvento, Toast.LENGTH_LONG).show();
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.publicacionevento_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_delete:
+                borrarCampos();
+                return true;
+            default:
+                //Si lsos fragments modifican el menu de la Activity se devuelve false
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void borrarCampos() {
@@ -56,5 +74,10 @@ public class SubidaEventoFragment extends Fragment implements View.OnClickListen
         binding.tieTipoEvento.setText("");
         binding.tieUbicacionEvento.setText("");
         binding.tieDescripcion.setText("");
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

@@ -1,65 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.evento.">
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gldStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gldEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
-
-    <TextView
-        android:id="@+id/tvSubidaEvento"
-        android:layout_width="350dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="@font/fuentetitulo"
-        android:gravity="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/tvPublicarEvento" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilNombreEvento"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@id/gldEnd"
-        app:layout_constraintStart_toStartOf="@id/gldStart"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubidaEvento">
+        android:layout_marginTop="@dimen/margintop_subidaevento"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tieNombreEvento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tvNombreEvento"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilFechaInicioEvento"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@id/gldEnd"
-        app:layout_constraintStart_toStartOf="@id/gldStart"
+        android:layout_marginTop="@dimen/margintop_subidaevento"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintTop_toBottomOf="@+id/tilNombreEvento">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -67,16 +38,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tvFechaInicio"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilFechaFinEvento"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@id/gldEnd"
-        app:layout_constraintStart_toStartOf="@id/gldStart"
+        android:layout_marginTop="@dimen/margintop_subidaevento"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintTop_toBottomOf="@+id/tilFechaInicioEvento">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -84,16 +55,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tvFechaFin"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUbicacionEvento"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@id/gldEnd"
-        app:layout_constraintStart_toStartOf="@id/gldStart"
+        android:layout_marginTop="@dimen/margintop_subidaevento"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintTop_toBottomOf="@+id/tilFechaFinEvento">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -101,17 +72,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tvUbicacion"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilTipoEvento"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@id/gldEnd"
-        app:layout_constraintStart_toStartOf="@id/gldStart"
+        android:layout_marginTop="@dimen/margintop_subidaevento"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintTop_toBottomOf="@+id/tilUbicacionEvento">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -119,17 +90,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tvTipoEvento"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilDescripcion"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@id/gldEnd"
-        app:layout_constraintStart_toStartOf="@id/gldStart"
+        android:layout_marginTop="@dimen/margintop_subidaevento"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintTop_toBottomOf="@+id/tilTipoEvento">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -137,29 +108,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tvDescripcion"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnBorrarCampos"
-        android:layout_width="wrap_content"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="300dp"
         android:layout_marginTop="20dp"
-        android:text="@string/btnBorrar"
-        app:layout_constraintStart_toStartOf="@+id/gldStart"
-        app:layout_constraintTop_toBottomOf="@+id/tilDescripcion" />
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:contentDescription="@string/todo" />
 
-    <Button
-        android:id="@+id/btnPublicarEvento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/btnPublicar"
-        app:layout_constraintEnd_toStartOf="@+id/gldEnd"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toEndOf="@+id/btnBorrarCampos"
-        app:layout_constraintTop_toBottomOf="@+id/tilDescripcion" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

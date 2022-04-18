@@ -83,5 +83,8 @@
     <string name="subida_evento">Subida evento</string>
     <string name="perfil_agrupacion">Perfil de agrupacion</string>
     <string name="perfil_usuario">Perfil de usuario</string>
+    <string name="todo">TODO</string>
+    <string name="addEvent" translatable="true">Pulsando aqui publicas el evento</string>
+    <string name="action_delete">Borrar</string>
 
 </resources>

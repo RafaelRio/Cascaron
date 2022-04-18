@@ -62,4 +62,6 @@
     <string name="subida_evento">Event upload</string>
     <string name="perfil_agrupacion">Group profile</string>
     <string name="perfil_usuario">User profile</string>
+    <string name="todo">TODO</string>
+    <string name="addEvent">Upload an event</string>
 </resources>

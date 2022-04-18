@@ -24,7 +24,8 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:label="@string/LoginActivity" />
+            android:label="@string/LoginActivity"
+            android:theme="@style/Theme.Cascaron"/>
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">

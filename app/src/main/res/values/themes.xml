@@ -14,6 +14,8 @@
         <!-- Customize your theme here. -->
     </style>
 
+
+
     <style name="Theme.Cascaron.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -22,4 +24,9 @@
     <style name="Theme.Cascaron.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Cascaron.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.Cascaron.textfont" parent="Theme.Cascaron">
+        <item name="fontFamily">@font/fuentetitulo</item>
+    </style>
+
 </resources>

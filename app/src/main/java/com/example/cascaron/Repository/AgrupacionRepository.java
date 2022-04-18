@@ -30,13 +30,13 @@ public class AgrupacionRepository implements AgrupacionListContract.Repository{
         list.add(new Agrupacion(null, null, "BM Cruz Humilladero", 100, "2000", "Jesus Puyana Gomez", "a"));
         list.add(new Agrupacion(null, null, "BM La Paz", 100, "1995", "2001", "d"));
         list.add(new Agrupacion(null, null, "BM Miraflores", 100, "1975", "Jose Maria Puyana", "l"));
-        list.add(new Agrupacion(null, null, "BM Zamarrilla", 100, "1997", "NPI", "s"));
-        list.add(new Agrupacion(null, null, "CCTT Cautivo", 100, "1997", "NPI", "r"));
-        list.add(new Agrupacion(null, null, "AM San Lorenzo Martir", 100, "1997", "NPI", "y"));
-        list.add(new Agrupacion(null, null, "BM (m)Pena", 100, "2005", "NPI", "f"));
+        list.add(new Agrupacion(null, null, "BM Zamarrilla", 100, "1997", "Adolfo Gálvez González", "s"));
+        list.add(new Agrupacion(null, null, "CCTT Cautivo", 100, "1997", "Raul Arribas Carballo", "r"));
+        list.add(new Agrupacion(null, null, "AM San Lorenzo Martir", 100, "1997", "Salvador Quero Morales", "y"));
+        list.add(new Agrupacion(null, null, "BM Mena", 100, "2005", "Juan Manuel Parra Urbano", "f"));
         list.add(new Agrupacion(null, null, "BM Esperanza", 100, "1960", "Juan Jesus Lopez Sandoval", "h"));
-        list.add(new Agrupacion(null, null, "CCTT Gitanos", 100, "1960", "NPI", "e"));
-        list.add(new Agrupacion(null, null, "AM Cautivo Estepona", 100, "1960", "NPI", "g"));
+        list.add(new Agrupacion(null, null, "CCTT Gitanos", 100, "1960", "Roberto Carlos Gomez-Landero Bueno", "e"));
+        list.add(new Agrupacion(null, null, "AM Cautivo Estepona", 100, "1960", "Miguel Angel Lopez Floria", "g"));
 
     }
 
