@@ -37,6 +37,7 @@
         android:layout_marginTop="88dp"
         android:gravity="center_vertical"
         android:text="@string/tvNombreUsuario"
+        style="@style/Theme.Cascaron.textfont"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent" />
