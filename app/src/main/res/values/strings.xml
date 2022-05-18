@@ -105,5 +105,6 @@
     <string name="errorPassword">Contraseña no valida</string>
     <string name="errEmailEmpty">Email vacio</string>
     <string name="errEmail">Email no valido</string>
+    <string name="action_delete">Borrar</string>
 
 </resources>
