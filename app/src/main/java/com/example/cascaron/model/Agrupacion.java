@@ -1,41 +1,28 @@
 package com.example.cascaron.model;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public class Agrupacion implements Comparable{
-    String foto;
-    String banner;
+import java.io.Serializable;
+
+@Entity (tableName = "Agrupacion")
+public class Agrupacion implements Comparable, Serializable {
+    @PrimaryKey
+    @NonNull
     String nombre;
-    Integer nMiembros;
-    String anioCreacion;
-    String director;
+    @NonNull
     String descripcion;
 
-    public Agrupacion(String foto, String banner, String nombre, Integer nMiembros, String anioCreacion, String director, String descripcion) {
-        this.foto = foto;
-        this.banner = banner;
+    public Agrupacion() {
+    }
+
+    public Agrupacion(String nombre, String descripcion) {
         this.nombre = nombre;
-        this.nMiembros = nMiembros;
-        this.anioCreacion = anioCreacion;
-        this.director = director;
         this.descripcion = descripcion;
     }
 
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    public String getBanner() {
-        return banner;
-    }
-
-    public void setBanner(String banner) {
-        this.banner = banner;
-    }
 
     public String getNombre() {
         return nombre;
@@ -45,29 +32,6 @@ public class Agrupacion implements Comparable{
         this.nombre = nombre;
     }
 
-    public Integer getnMiembros() {
-        return nMiembros;
-    }
-
-    public void setnMiembros(Integer nMiembros) {
-        this.nMiembros = nMiembros;
-    }
-
-    public String getAnioCreacion() {
-        return anioCreacion;
-    }
-
-    public void setAnioCreacion(String anioCreacion) {
-        this.anioCreacion = anioCreacion;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
 
     public String getDescripcion() {
         return descripcion;
@@ -81,9 +45,6 @@ public class Agrupacion implements Comparable{
     public String toString() {
         return "Agrupacion{" +
                 "nombre='" + nombre + '\'' +
-                ", nMiembros=" + nMiembros +
-                ", anioCreacion='" + anioCreacion + '\'' +
-                ", director='" + director + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 '}';
     }

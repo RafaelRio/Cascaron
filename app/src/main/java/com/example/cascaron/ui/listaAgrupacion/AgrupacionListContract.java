@@ -2,48 +2,31 @@ package com.example.cascaron.ui.listaAgrupacion;
 
 import com.example.cascaron.model.Agrupacion;
 import com.example.cascaron.ui.base.BasePresenter;
-import com.example.cascaron.ui.base.OnRepositoryListCallback;
-import com.example.cascaron.ui.base.iProgressView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface AgrupacionListContract {
-    interface View extends OnRepositoryListCallback, iProgressView {
-        void showData(ArrayList<Agrupacion> list);
-        void showNoData();
-
-        //Ordena de la A-Z
-        void showDataOrder();
-
-        //Ordena de la Z-A
-        void showDataInverseOrder();
+    interface View extends OnRepositoryCallback {
+        void showProgress();
+        void hideProgress();
     }
 
-    interface Presenter extends BasePresenter {
-        //1. Cargar los datos
+    interface Presenter extends BasePresenter, OnRepositoryCallback {
         void load();
-
-        //2. Cuando se realiza una pulsacion larga se elimina
         void delete(Agrupacion agrupacion);
+    }
 
-        //3. Cuando el usuario pulsa la opcion undo del SnackBar
-        void undo(Agrupacion agrupacion);
-
-        //4. La lista se ordena por nombre
-        void order();
+    interface Interactor extends OnRepositoryCallback{
+        void load();
+        void delete(Agrupacion agrupacion);
     }
 
     interface Repository {
-        //1. Cargar los datos
-        void getList();
-
-        //2. Cuando se realiza una pulsacion larga se elimina
-        void delete(Agrupacion agrupacion);
-
-        //3. Cuando el usuario pulsa la opcion undo del SnackBar
-        void undo(Agrupacion agrupacion);
+        void delete(OnRepositoryCallback callback, Agrupacion agrupacion);
     }
 
-    interface OnInteractorListener extends OnRepositoryListCallback {
+    interface OnRepositoryCallback {
+        void onListSuccess(List<Agrupacion> agrupaciones);
+        void onNoData();
     }
 }

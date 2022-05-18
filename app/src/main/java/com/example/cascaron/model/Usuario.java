@@ -3,6 +3,7 @@ package com.example.cascaron.model;
 import androidx.annotation.Nullable;
 
 public class Usuario {
+    public static final String TAG = "user";
     String foto;
     String nombre;
     String contrasena;
@@ -13,6 +14,11 @@ public class Usuario {
         this.nombre = nombre;
         this.contrasena = contrasena;
         this.email = email;
+    }
+
+    public Usuario(String nombre, String contrasena) {
+        this.nombre = nombre;
+        this.contrasena = contrasena;
     }
 
     public String getFoto() {

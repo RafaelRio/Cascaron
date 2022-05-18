@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168831763171",
+    "project_id": "tfg-android-58207",
+    "storage_bucket": "tfg-android-58207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168831763171:android:5189b00fd5613b5c187bd6",
+        "android_client_info": {
+          "package_name": "com.example.cascaron"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168831763171-deathfbvrublg9om1budqcdcc8mni0mn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5gb_0IQzWRls6lNNFv-AHHGWuY4OQUYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168831763171-deathfbvrublg9om1budqcdcc8mni0mn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

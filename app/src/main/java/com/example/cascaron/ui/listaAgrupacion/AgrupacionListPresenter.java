@@ -5,10 +5,9 @@ import com.example.cascaron.model.Agrupacion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgrupacionListPresenter implements AgrupacionListContract.Presenter, AgrupacionListContract.OnInteractorListener {
+public class AgrupacionListPresenter implements AgrupacionListContract.Presenter {
     private AgrupacionListContract.View view;
     private AgrupacionListInteractor interactor;
-    private Boolean order = false;
 
     public AgrupacionListPresenter(AgrupacionListContract.View view) {
         this.view = view;
@@ -17,7 +16,7 @@ public class AgrupacionListPresenter implements AgrupacionListContract.Presenter
 
     @Override
     public void load() {
-        view.showProgressBar();
+        view.showProgress();
         interactor.load();
     }
 
@@ -32,49 +31,19 @@ public class AgrupacionListPresenter implements AgrupacionListContract.Presenter
     }
 
     @Override
-    public void undo(Agrupacion agrupacion) {
-        interactor.undo(agrupacion);
-    }
-
-    @Override
-    public void order() {
-        if (order == true) {
-            order = false;
-            view.showDataInverseOrder();
-        } else {
-            order = true;
-            view.showDataOrder();
-        }
-    }
-
-    @Override
-    public void onFailure(String mensaje) {
-
-    }
-
-    @Override
-    public <T> void onSuccess(List<T> list) {
-        if (list.size() == 0) {
-            view.showNoData();
-        } else {
-            view.showData((ArrayList<Agrupacion>) list);
-        }
-        view.hideProgressBar();
-    }
-
-    @Override
-    public void onDeleteSuccess(String mensaje) {
-        view.onDeleteSuccess(mensaje);
-    }
-
-    @Override
-    public void onUndoSuccess(String mensaje) {
-        view.onUndoSuccess(mensaje);
-    }
-
-    @Override
     public void onDestroy() {
         this.interactor = null;
         this.view = null;
+    }
+
+    @Override
+    public void onListSuccess(List<Agrupacion> agrupaciones) {
+        view.hideProgress();
+        view.onListSuccess(agrupaciones);
+    }
+
+    @Override
+    public void onNoData() {
+
     }
 }

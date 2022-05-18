@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_ventanaPrincipal_to_agrupacionListFragment"
             app:destination="@id/agrupacionListFragment" />
+        <action
+            android:id="@+id/action_ventanaPrincipal_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/busquedaAgrupacion"
@@ -43,9 +46,13 @@
     </fragment>
     <fragment
         android:id="@+id/informacionEventoFragment"
-        android:name="com.example.cascaron.ui.evento.InformacionEventoFragment"
+        android:name="com.example.cascaron.ui.evento.EventoListFragment"
         android:label="fragment_informacion_evento"
-        tools:layout="@layout/fragment_informacion_evento" />
+        tools:layout="@layout/fragment_informacion_evento" >
+        <action
+            android:id="@+id/action_informacionEventoFragment_to_eventoManageFragment"
+            app:destination="@id/eventoManageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/calendarioFragment"
         android:name="com.example.cascaron.ui.calendario.CalendarioFragment"
@@ -74,5 +81,33 @@
         android:id="@+id/agrupacionListFragment"
         android:name="com.example.cascaron.ui.listaAgrupacion.AgrupacionListFragment"
         android:label="fragment_agrupacion_list"
-        tools:layout="@layout/fragment_agrupacion_list" />
+        tools:layout="@layout/fragment_agrupacion_list" >
+        <action
+            android:id="@+id/action_agrupacionListFragment_to_agrupacionManageFragment"
+            app:destination="@id/agrupacionManageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agrupacionManageFragment"
+        android:name="com.example.cascaron.ui.listaAgrupacion.ManageAgrupacion.AgrupacionManageFragment"
+        android:label="fragment_agrupacion_manage"
+        tools:layout="@layout/fragment_agrupacion_manage" >
+        <argument
+            android:name="Agrupacion"
+            app:argType="com.example.cascaron.model.Agrupacion"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventoManageFragment"
+        android:name="com.example.cascaron.ui.evento.eventoManage.EventoManageFragment"
+        android:label="fragment_evento_manage"
+        tools:layout="@layout/fragment_evento_manage" >
+        <argument
+            android:name="Evento"
+            app:argType="com.example.cascaron.model.Evento"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.cascaron.ui.preferencias.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

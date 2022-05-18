@@ -20,14 +20,14 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilNombreEvento"
+        android:id="@+id/tilUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/login_tilUser_margin_top"
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieNombreEvento"
+            android:id="@+id/tieUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tieUser" />
@@ -35,7 +35,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilFechaFinEvento"
+        android:id="@+id/tilContrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/login_tilPassword_margin_top"
@@ -43,7 +43,7 @@
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieFechFinEvento"
+            android:id="@+id/tieContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tiePassword"

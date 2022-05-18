@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilNombreEvento"
+        android:id="@+id/tilUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/gldEnd"
@@ -43,7 +43,7 @@
         android:layout_marginTop="@dimen/tvLogin_margin_top">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieNombreEvento"
+            android:id="@+id/tieUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/IntroduceUsuario"
@@ -51,16 +51,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilFechaInicioEvento"
+        android:id="@+id/tilEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilNombreEvento"
+        app:layout_constraintTop_toBottomOf="@+id/tilUsuario"
         app:layout_constraintEnd_toStartOf="@id/gldEnd"
         app:layout_constraintStart_toStartOf="@id/gldStart"
         android:layout_marginTop="@dimen/tvLogin_margin_top">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieFechaInicioEvento"
+            android:id="@+id/tieEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tieEmail"
@@ -68,16 +68,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilFechaFinEvento"
+        android:id="@+id/tilContrasena"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilFechaInicioEvento"
+        app:layout_constraintTop_toBottomOf="@+id/tilEmail"
         app:layout_constraintEnd_toStartOf="@id/gldEnd"
         app:layout_constraintStart_toStartOf="@id/gldStart"
         android:layout_marginTop="@dimen/tvLogin_margin_top">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieFechFinEvento"
+            android:id="@+id/tieContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tieIntroduceContraseña"
@@ -86,16 +86,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilUbicacionEvento"
+        android:id="@+id/tilConfirmarContrasena"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilFechaFinEvento"
+        app:layout_constraintTop_toBottomOf="@+id/tilContrasena"
         app:layout_constraintEnd_toStartOf="@id/gldEnd"
         app:layout_constraintStart_toStartOf="@id/gldStart"
         android:layout_marginTop="@dimen/tvLogin_margin_top">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieUbicacionEvento"
+            android:id="@+id/tieConfirmarContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tieConfirmeContraseña"
@@ -114,7 +114,7 @@
         app:layout_constraintEnd_toStartOf="@+id/gldEnd"
         app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="@+id/gldStart"
-        app:layout_constraintTop_toBottomOf="@+id/tilUbicacionEvento" />
+        app:layout_constraintTop_toBottomOf="@+id/tilConfirmarContrasena" />
 
     <Button
         android:id="@+id/btnSignUp"
@@ -129,7 +129,7 @@
         app:layout_constraintEnd_toStartOf="@id/gldEnd"
         app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="@id/gldStart"
-        app:layout_constraintTop_toBottomOf="@+id/tilUbicacionEvento" />
+        app:layout_constraintTop_toBottomOf="@+id/tilConfirmarContrasena" />
 
     <Button
         android:id="@+id/btnCuentaCreada"
@@ -142,6 +142,6 @@
         android:textAlignment="gravity"
         android:textColor="@color/colorPrincipal"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/tilUbicacionEvento" />
+        app:layout_constraintTop_toBottomOf="@+id/tilConfirmarContrasena" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:title="@string/action_search"
-        android:id="@+id/action_search"
-        android:orderInCategory="1"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_action_ladd"/>
-    <item android:title="@string/action_search"
-        android:id="@+id/action_userprofile"
-        android:orderInCategory="2"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_action_user"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/action_aboutUs"
-        app:showAsAction="never"
-        android:orderInCategory="3"
-        android:id="@+id/action_aboutUs"/>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/agrupacionListFragment"
+            android:icon="@drawable/ic_action_agrupation"
+            android:title="@string/action_agrupacionList" />
+
+        <item
+            android:id="@+id/informacionEventoFragment"
+            android:icon="@drawable/ic_action_music"
+            android:title="@string/action_info_evento" />
+        <item
+            android:id="@+id/busquedaAgrupacion"
+            android:icon="@drawable/ic_action_ladd"
+            android:title="@string/action_search" />
+
+        <item
+            android:id="@+id/calendarioFragment"
+            android:icon="@drawable/ic_action_calendar"
+            android:title="@string/calendario" />
+
+    </group>
+
+    <item android:title="@string/opciones">
+        <menu>
+            <item
+                android:id="@+id/aboutUsFragment"
+                android:icon="@drawable/ic_action_user"
+                android:title="@string/action_aboutUs" />
 
 
-    <item android:title="@string/action_settings"
-        app:showAsAction="never"
-        android:orderInCategory="4"
-        android:id="@+id/action_actionSettings"/>
+            <item
+                android:id="@+id/settingsFragment"
+                android:icon="@drawable/ic_action_settings"
+                android:title="@string/action_settings" />
+        </menu>
+    </item>
+
 </menu>

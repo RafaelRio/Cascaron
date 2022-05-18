@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 
+import com.example.cascaron.MainActivity;
 import com.example.cascaron.R;
+import com.example.cascaron.model.Usuario;
 import com.example.cascaron.ui.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -19,9 +22,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
     }
-
 
     /**
      * Vamos a simular un tiempo de espera con un hilo que duerme 2 segundos y
@@ -30,11 +31,32 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        new Handler().postDelayed(() -> startLogin(), WAIT_TIME);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (saveSession()) {
+                    startApp();
+                } else {
+                    startLogin();
+                }
+            }
+        }, WAIT_TIME);
+    }
+
+    private boolean saveSession() {
+        return (PreferenceManager.getDefaultSharedPreferences(this).contains(Usuario.TAG));
     }
 
     private void startLogin() {
         startActivity(new Intent( SplashActivity.this, LoginActivity.class));
+        //Voy a llamar de forma explicita al metodo finish de una activity para
+        //eliminar esta activity de la pila de actividades porque si el usuario
+        //pulsa back, no queremos que se visualice
+        finish();
+    }
+
+    private void startApp() {
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
         //Voy a llamar de forma explicita al metodo finish de una activity para
         //eliminar esta activity de la pila de actividades porque si el usuario
         //pulsa back, no queremos que se visualice

@@ -1,60 +1,61 @@
 package com.example.cascaron.Repository;
 
+import com.example.cascaron.AgrupacionDatabase;
 import com.example.cascaron.model.Agrupacion;
-import com.example.cascaron.ui.base.OnRepositoryListCallback;
+import com.example.cascaron.model.dao.AgrupacionDao;
 import com.example.cascaron.ui.listaAgrupacion.AgrupacionListContract;
+import com.example.cascaron.ui.listaAgrupacion.ManageAgrupacion.AgrupacionManageContract;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
-public class AgrupacionRepository implements AgrupacionListContract.Repository{
+public class AgrupacionRepository implements AgrupacionListContract.Repository, AgrupacionManageContract.Repository {
 
     private static AgrupacionRepository instance;
-    private OnRepositoryListCallback callback;
-    private ArrayList<Agrupacion> list;
 
-    private AgrupacionRepository() {
-        list = new ArrayList<>();
-        initialice();
+    static {
+        instance = new AgrupacionRepository();
     }
 
-    public static AgrupacionRepository getInstance(OnRepositoryListCallback callback) {
+    private AgrupacionDao agrupacionDao;
+    private List<Agrupacion> agrupaciones;
+
+    private AgrupacionRepository() {
+        AgrupacionDatabase agrupacionDB = AgrupacionDatabase.getDatabase();
+        agrupacionDao = agrupacionDB.AgrupacionDao();
+    }
+
+
+    public static AgrupacionRepository getInstance() {
         if (instance == null) {
             instance = new AgrupacionRepository();
         }
-        instance.callback = callback;
         return instance;
     }
 
-    private void initialice() {
-        list.add(new Agrupacion(null, null, "BM Cruz Humilladero", 100, "2000", "Jesus Puyana Gomez", "a"));
-        list.add(new Agrupacion(null, null, "BM La Paz", 100, "1995", "2001", "d"));
-        list.add(new Agrupacion(null, null, "BM Miraflores", 100, "1975", "Jose Maria Puyana", "l"));
-        list.add(new Agrupacion(null, null, "BM Zamarrilla", 100, "1997", "NPI", "s"));
-        list.add(new Agrupacion(null, null, "CCTT Cautivo", 100, "1997", "NPI", "r"));
-        list.add(new Agrupacion(null, null, "AM San Lorenzo Martir", 100, "1997", "NPI", "y"));
-        list.add(new Agrupacion(null, null, "BM (m)Pena", 100, "2005", "NPI", "f"));
-        list.add(new Agrupacion(null, null, "BM Esperanza", 100, "1960", "Juan Jesus Lopez Sandoval", "h"));
-        list.add(new Agrupacion(null, null, "CCTT Gitanos", 100, "1960", "NPI", "e"));
-        list.add(new Agrupacion(null, null, "AM Cautivo Estepona", 100, "1960", "NPI", "g"));
-
+    public void getList(AgrupacionListContract.OnRepositoryCallback callback) {
+        agrupaciones = agrupacionDao.selectAll();
+        if (agrupaciones.isEmpty()) {
+            callback.onNoData();
+        } else {
+            callback.onListSuccess(agrupaciones);
+        }
     }
 
     @Override
-    public void getList() {
-        callback.onSuccess(list);
-        Collections.sort(list);
+    public void add(AgrupacionManageContract.OnRepositoryCallback callback, Agrupacion a) {
+        AgrupacionDatabase.databaseWriteExecutor.execute(() -> agrupacionDao.insert(a));
     }
 
     @Override
-    public void delete(Agrupacion agrupacion) {
-        list.remove(agrupacion);
-        callback.onDeleteSuccess("Se ha eliminado la dependencia " + agrupacion);
+    public void edit(AgrupacionManageContract.OnRepositoryCallback callback, Agrupacion a) {
+        AgrupacionDatabase.databaseWriteExecutor.execute(() -> agrupacionDao.update(a));
     }
 
+
     @Override
-    public void undo(Agrupacion agrupacion) {
-        list.add(agrupacion);
-        callback.onUndoSuccess("Operacion cancelada");
+    public void delete(AgrupacionListContract.OnRepositoryCallback callback, Agrupacion agrupacion) {
+        AgrupacionDatabase.databaseWriteExecutor.execute(() -> agrupacionDao.deleteTask(agrupacion));
     }
 }

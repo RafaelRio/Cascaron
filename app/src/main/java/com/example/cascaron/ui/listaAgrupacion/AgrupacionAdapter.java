@@ -22,8 +22,16 @@ import java.util.List;
 
 public class AgrupacionAdapter extends RecyclerView.Adapter<AgrupacionAdapter.ViewHolder>{
 
-    private final ArrayList<Agrupacion> list;
-    private final OnManageAgrupacionListener listener;
+    private final List<Agrupacion> list;
+    OnManageAgrupacionListener listener;
+
+    public interface OnManageAgrupacionListener {
+        //Si se hace click en una dependencia se edita (onClickListener)
+        void onEditAgrupacion(Agrupacion agrupacion);
+
+        //Si se hace una pulsacion larga en la dependencia se elimina (onLongClickListener)
+        void onDeleteAgrupacion(Agrupacion agrupacion);
+    }
 
     public AgrupacionAdapter(ArrayList<Agrupacion> list, OnManageAgrupacionListener listener) {
         this.list = list;
@@ -70,7 +78,7 @@ public class AgrupacionAdapter extends RecyclerView.Adapter<AgrupacionAdapter.Vi
         notifyDataSetChanged();
     }
 
-    public void delete(Agrupacion deleted) {
+    /*public void delete(Agrupacion deleted) {
         list.remove(deleted);
         notifyDataSetChanged();
     }
@@ -79,7 +87,7 @@ public class AgrupacionAdapter extends RecyclerView.Adapter<AgrupacionAdapter.Vi
      * Ordena la vista en BASE AL METODO COMPARETO DEFINIDA EN EL POJO
      * (en este caso ordena por nombre)
      */
-    public void order() {
+    /*public void order() {
         Collections.sort(list);
         notifyDataSetChanged();
     }
@@ -87,13 +95,13 @@ public class AgrupacionAdapter extends RecyclerView.Adapter<AgrupacionAdapter.Vi
     public void inverseOrder(){
         Collections.reverse(list);
         notifyDataSetChanged();
-    }
+    }*/
 
     /**
      * Ordena la vista en base a un objeto de una clase que implementa la interfaz
      * comparator
      */
-    public void orderByDescription() {
+    /*public void orderByDescription() {
         Collections.sort(list, new AgrupacionComparator());
         notifyDataSetChanged();
     }
@@ -101,15 +109,9 @@ public class AgrupacionAdapter extends RecyclerView.Adapter<AgrupacionAdapter.Vi
     public void undo(Agrupacion deleted) {
         list.add(deleted);
         notifyDataSetChanged();
-    }
+    }*/
 
-    public interface OnManageAgrupacionListener {
-        //Si se hace click en una dependencia se edita (onClickListener)
-        void onEditAgrupacion(Agrupacion agrupacion);
 
-        //Si se hace una pulsacion larga en la dependencia se elimina (onLongClickListener)
-        void onDeleteAgrupacion(Agrupacion agrupacion);
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -133,7 +135,14 @@ public class AgrupacionAdapter extends RecyclerView.Adapter<AgrupacionAdapter.Vi
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(itemView.getContext(), tvName.getText(), Toast.LENGTH_SHORT).show();
+                    listener.onEditAgrupacion(agrupacion);
+                }
+            });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    listener.onDeleteAgrupacion(agrupacion);
+                    return true;
                 }
             });
         }

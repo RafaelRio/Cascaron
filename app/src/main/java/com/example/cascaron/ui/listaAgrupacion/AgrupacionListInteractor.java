@@ -2,57 +2,34 @@ package com.example.cascaron.ui.listaAgrupacion;
 
 import com.example.cascaron.Repository.AgrupacionRepository;
 import com.example.cascaron.model.Agrupacion;
-import com.example.cascaron.ui.base.OnRepositoryListCallback;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class AgrupacionListInteractor implements OnRepositoryListCallback {
+public class AgrupacionListInteractor implements AgrupacionListContract.Interactor {
 
-    private AgrupacionListContract.OnInteractorListener listener;
+    private AgrupacionListContract.OnRepositoryCallback listener;
 
-    public AgrupacionListInteractor(AgrupacionListContract.OnInteractorListener listener) {
+    public AgrupacionListInteractor(AgrupacionListContract.OnRepositoryCallback listener) {
         this.listener = listener;
     }
 
     @Override
-    public void onFailure(String mensaje) {
-
+    public void onListSuccess(List<Agrupacion> agrupaciones) {
+        listener.onListSuccess(agrupaciones);
     }
 
     @Override
-    public <T> void onSuccess(List<T> list) {
-        listener.onSuccess((ArrayList<Agrupacion>) list);
+    public void onNoData() {
+        listener.onNoData();
     }
 
     @Override
-    public void onDeleteSuccess(String mensaje) {
-        listener.onDeleteSuccess(mensaje);
-    }
-
-    @Override
-    public void onUndoSuccess(String mensaje) {
-        listener.onUndoSuccess(mensaje);
-    }
-
-    /**
-     * Metodo que pide los datos al repositorio
-     */
     public void load() {
-        //SIEMPRE SE ACCEDE DE FORMA ESTATICA AL REPOSITORIO
-        AgrupacionRepository.getInstance(this).getList();
+        AgrupacionRepository.getInstance().getList(this);
     }
 
-    /**
-     * Elimina la agrupacion del repositorio
-     *
-     * @param dependency
-     */
-    public void delete(Agrupacion dependency) {
-        AgrupacionRepository.getInstance(this).delete(dependency);
-    }
-
-    public void undo(Agrupacion dependency) {
-        AgrupacionRepository.getInstance(this).undo(dependency);
+    @Override
+    public void delete(Agrupacion agrupacion) {
+        AgrupacionRepository.getInstance().delete(this, agrupacion);
     }
 }
